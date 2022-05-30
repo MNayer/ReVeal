@@ -379,15 +379,25 @@ class Tokenizer:
     
 
 def tokenize(file_text):
-    try:
-        c_file = open('/tmp/test1.c', 'w')
-        c_file.write(file_text)
-        c_file.close()
-        tok = Tokenizer('/tmp/test1.c')
-        results = tok.split_functions(False)
-        return ' '.join(results[0])
-    except:
-        return None
+    c_file = open('/tmp/test1.c', 'w')
+    print("In tokenize write to /tmp/test1.c -> \n%s" % file_text)
+    c_file.write(file_text)
+    c_file.close()
+    tok = Tokenizer('/tmp/test1.c')
+    results = tok.split_functions(False)
+    print("In tokenize results: %s" % str(results))
+    return ' '.join(results[0])
+    #try:
+    #    c_file = open('/tmp/test1.c', 'w')
+    #    print("In tokenize write to /tmp/test1.c -> \n%s" % file_text)
+    #    c_file.write(file_text)
+    #    c_file.close()
+    #    tok = Tokenizer('/tmp/test1.c')
+    #    results = tok.split_functions(False)
+    #    print("In tokenize results: %s" % str(results))
+    #    return ' '.join(results[0])
+    #except:
+    #    return None
 
 
 # In[15]:
@@ -419,7 +429,7 @@ all_data = []
 #ggnn_json_data = json.load(open('../data/ggnn_input/devign_cfg_full_text_files.json'))
 #files = [d['file_name'] for d in ggnn_json_data]
 files = os.listdir(split_dir)
-print(len(files))
+print("Input files: %d"  % len(files))
     
 for i, file_name  in enumerate(files):
     label = file_name.strip()[:-2].split('_')[-1]
@@ -436,6 +446,7 @@ for i, file_name  in enumerate(files):
     arithmatic_lines = set()
     
     if len(nodes) == 0:
+        print("WARNING: len(nodes) == 0")
         continue
     
     for node_idx, node in enumerate(nodes):
@@ -443,6 +454,7 @@ for i, file_name  in enumerate(files):
         if ntype == 'CallExpression':
             function_name = nodes[node_idx + 1]['code']
             if function_name  is None or function_name.strip() == '':
+                print("WARNING function_name is None or function_name.strip() == ''")
                 continue
             if function_name.strip() in l_funcs:
                 line_no = extract_line_number(node_idx, nodes)
@@ -545,6 +557,7 @@ for i, file_name  in enumerate(files):
             
     t_code = tokenize(code_text)
     if t_code is None:
+        print("WARNING: t_code is None")
         continue
     data_instance = {
         'file_path': split_dir + file_name.strip(),
@@ -579,7 +592,7 @@ output_file.close()
 # In[17]:
 
 
-print(len(all_data))
+print("All data: %d" % len(all_data))
 
 
 # In[ ]:
