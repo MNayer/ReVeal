@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 # set the config
 try:
     clang.cindex.Config.set_library_path("/usr/lib/x86_64-linux-gnu")
-    clang.cindex.Config.set_library_file('/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1')
+    clang.cindex.Config.set_library_file('/usr/lib/x86_64-linux-gnu/libclang-8.so.1')
 except:
     pass
 
