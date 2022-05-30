@@ -25,13 +25,15 @@ except:
 # In[14]:
 
 
-split_dir = '../data/neurips_parsed/neurips_data/'
-parsed = '../data/neurips_parsed/parsed_results/'
+split_dir = '../data/example/raw_code/'
+parsed = '../data/example/parsed/raw_code/'
+#split_dir = '../data/neurips_parsed/neurips_data/'
+#parsed = '../data/neurips_parsed/parsed_results/'
 # split_dir = '../data/chrome_debian/raw_code/'
 # parsed = '../data/chrome_debian/parsed/'
-ggnn_json_data = json.load(open('../data/ggnn_input/devign_cfg_full_text_files.json'))
-files = [d['file_name'] for d in ggnn_json_data]
-print(len(files))
+#ggnn_json_data = json.load(open('../data/ggnn_input/devign_cfg_full_text_files.json'))
+#files = [d['file_name'] for d in ggnn_json_data]
+#print(len(files))
 
 
 # In[6]:
@@ -414,8 +416,9 @@ def extract_line_number(idx, nodes):
 
 all_data = []
 
-ggnn_json_data = json.load(open('../data/ggnn_input/devign_cfg_full_text_files.json'))
-files = [d['file_name'] for d in ggnn_json_data]
+#ggnn_json_data = json.load(open('../data/ggnn_input/devign_cfg_full_text_files.json'))
+#files = [d['file_name'] for d in ggnn_json_data]
+files = os.listdir(split_dir)
 print(len(files))
     
 for i, file_name  in enumerate(files):
