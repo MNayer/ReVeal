@@ -7,5 +7,5 @@ popd
 
 
 pushd data_processing/
-./extract_slices.py
+python extract_slices.py
 popd
