@@ -17,3 +17,7 @@ mkdir -p data/example/full_experiment_real_data/crash
 pushd data_processing/
 python create_ggnn_data.py --project crash --csv /home/user/ReVeal/data/example/parsed/raw_code/ --src /home/user/ReVeal/data/example/raw_code/ --output /home/user/ReVeal/data/example/full_experiment_real_data/crash/crash.json
 popd
+
+pushd data_processing/
+python full_data_prep_script.py
+popd

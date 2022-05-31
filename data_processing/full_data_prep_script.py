@@ -7,7 +7,7 @@
 import json
 import os
 import sys
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 
 
 # In[6]:
