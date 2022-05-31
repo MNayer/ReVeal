@@ -13,8 +13,9 @@ from tqdm.notebook import tqdm
 # In[6]:
 
 
-base_dir = '../data/full_experiment_real_data/'
-project = 'devign'
+base_dir = '../data/example/full_experiment_real_data/'
+output_dir = '../data/example/full_experiment_real_data_processed/'
+project = 'crash'
 shards = os.listdir(os.path.join(base_dir, project))
 
 
@@ -64,7 +65,7 @@ def extract_graph_data(
 # In[8]:
 
 
-extract_graph_data('chrome_debian', 'full_graph')
+extract_graph_data(project, 'full_graph', base_dir, output_dir)
 
 
 # In[5]:
@@ -253,7 +254,7 @@ import re
 try:
     # set the config
     clang.cindex.Config.set_library_path("/usr/lib/x86_64-linux-gnu")
-    clang.cindex.Config.set_library_file('/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1')
+    clang.cindex.Config.set_library_file('/usr/lib/x86_64-linux-gnu/libclang-8.so.1')
 except:
     pass            
 
@@ -711,14 +712,15 @@ def extract_line_graph_data(
 
 # In[21]:
 
-
-graph_data = extract_line_graph_data("devign")
+# TODO
+#graph_data = extract_line_graph_data("devign", base_dir, output_dir)
 
 
 # In[22]:
 
 
-graph_data = extract_line_graph_data("chrome_debian")
+# TODO
+#graph_data = extract_line_graph_data("chrome_debian", base_dir, output_dir)
 
 
 # In[ ]:
