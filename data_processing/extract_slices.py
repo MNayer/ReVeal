@@ -379,25 +379,25 @@ class Tokenizer:
     
 
 def tokenize(file_text):
-    c_file = open('/tmp/test1.c', 'w')
-    print("In tokenize write to /tmp/test1.c -> \n%s" % file_text)
-    c_file.write(file_text)
-    c_file.close()
-    tok = Tokenizer('/tmp/test1.c')
-    results = tok.split_functions(False)
-    print("In tokenize results: %s" % str(results))
-    return ' '.join(results[0])
-    #try:
-    #    c_file = open('/tmp/test1.c', 'w')
-    #    print("In tokenize write to /tmp/test1.c -> \n%s" % file_text)
-    #    c_file.write(file_text)
-    #    c_file.close()
-    #    tok = Tokenizer('/tmp/test1.c')
-    #    results = tok.split_functions(False)
-    #    print("In tokenize results: %s" % str(results))
-    #    return ' '.join(results[0])
-    #except:
-    #    return None
+    #c_file = open('/tmp/test1.c', 'w')
+    #print("In tokenize write to /tmp/test1.c -> \n%s" % file_text)
+    #c_file.write(file_text)
+    #c_file.close()
+    #tok = Tokenizer('/tmp/test1.c')
+    #results = tok.split_functions(False)
+    #print("In tokenize results: %s" % str(results))
+    #return ' '.join(results[0])
+    try:
+        c_file = open('/tmp/test1.c', 'w')
+        #print("In tokenize write to /tmp/test1.c -> \n%s" % file_text)
+        c_file.write(file_text)
+        c_file.close()
+        tok = Tokenizer('/tmp/test1.c')
+        results = tok.split_functions(False)
+        #print("In tokenize results: %s" % str(results))
+        return ' '.join(results[0])
+    except:
+        return None
 
 
 # In[15]:
