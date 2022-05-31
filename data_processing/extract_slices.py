@@ -25,8 +25,8 @@ except:
 # In[14]:
 
 
-split_dir = '../data/examples/raw_code/'
-parsed = '../data/examples/parsed/raw_code/'
+split_dir = '../data/example/raw_code/'
+parsed = '../data/example/parsed/raw_code/'
 #split_dir = '../data/neurips_parsed/neurips_data/'
 #parsed = '../data/neurips_parsed/parsed_results/'
 # split_dir = '../data/chrome_debian/raw_code/'
@@ -584,7 +584,7 @@ for i, file_name  in enumerate(files):
 # In[16]:
 
 
-output_file = open('../data/devign_full_data_with_slices', 'w')
+output_file = open('../data/crash_full_data_with_slices.json', 'w')
 json.dump(all_data, output_file)
 output_file.close()
 

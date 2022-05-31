@@ -3,8 +3,13 @@ import csv
 import json
 import numpy as np
 import os
+import re
+import nltk
+import warnings
 from gensim.models import Word2Vec
 from tqdm import tqdm
+
+nltk.download('punkt')
 
 keywords = ["alignas", "alignof", "and", "and_eq", "asm", "atomic_cancel", "atomic_commit",
             "atomic_noexcept", "auto", "bitand", "bitor", "bool", "break", "case", "catch",
@@ -154,10 +159,6 @@ l_funcs = ['StrNCat', 'getaddrinfo', '_ui64toa', 'fclose', 'pthread_mutex_lock',
            'IDbDataAdapter.Fill', '_wspawnl', 'fwprintf', 'sem_wait', '_unlink', 'ldap_search_ext_sW', 'signal',
            'PQclear',
            'PQfinish', 'PQexec', 'PQresultStatus']
-
-import re
-import nltk
-import warnings
 
 warnings.filterwarnings('ignore')
 
