@@ -28,6 +28,7 @@ except:
 
 split_dir = sys.argv[1] # '../data/example/raw_code/'
 parsed = sys.argv[2] # '../data/example/parsed/raw_code/'
+dataset_name = sys.argv[3] # 'crash'
 #split_dir = '../data/neurips_parsed/neurips_data/'
 #parsed = '../data/neurips_parsed/parsed_results/'
 # split_dir = '../data/chrome_debian/raw_code/'
@@ -585,7 +586,7 @@ for i, file_name  in enumerate(files):
 # In[16]:
 
 
-output_file = open('../data/crash_full_data_with_slices.json', 'w')
+output_file = open(f'../data/{dataset_name}_full_data_with_slices.json', 'w')
 json.dump(all_data, output_file)
 output_file.close()
 
