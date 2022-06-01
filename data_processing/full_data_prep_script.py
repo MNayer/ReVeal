@@ -7,15 +7,16 @@
 import json
 import os
 import sys
+import sys
 from tqdm import tqdm
 
 
 # In[6]:
 
 
-base_dir = '../data/example/full_experiment_real_data/'
-output_dir = '../data/example/full_experiment_real_data_processed/'
-project = 'crash'
+base_dir = sys.argv[1] # '../data/example/full_experiment_real_data/'
+output_dir = sys.argv[2] # '../data/example/full_experiment_real_data_processed/'
+project = sys.argv[3] # 'crash'
 shards = os.listdir(os.path.join(base_dir, project))
 
 

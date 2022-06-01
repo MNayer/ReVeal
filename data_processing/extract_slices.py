@@ -13,6 +13,7 @@ import numpy as np
 import os
 import re 
 import warnings
+import sys
 warnings.filterwarnings('ignore')
 # set the config
 try:
@@ -25,8 +26,8 @@ except:
 # In[14]:
 
 
-split_dir = '../data/example/raw_code/'
-parsed = '../data/example/parsed/raw_code/'
+split_dir = sys.argv[1] # '../data/example/raw_code/'
+parsed = sys.argv[2] # '../data/example/parsed/raw_code/'
 #split_dir = '../data/neurips_parsed/neurips_data/'
 #parsed = '../data/neurips_parsed/parsed_results/'
 # split_dir = '../data/chrome_debian/raw_code/'
