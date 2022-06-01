@@ -11,7 +11,7 @@ from baseline_svm import SVMLearningAPI
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', default='chrome_debian/balanced',
-                        choices=['chrome_debian/balanced', 'chrome_debian/imbalanced', 'chrome_debian', 'devign', 'crash'])
+                        choices=['chrome_debian/balanced', 'chrome_debian/imbalanced', 'chrome_debian', 'devign', 'crash', 'my_chrome_debian'])
     parser.add_argument('--features', default='ggnn', choices=['ggnn', 'wo_ggnn'])
     parser.add_argument('--lambda1', default=0.5, type=float)
     parser.add_argument('--lambda2', default=0.001, type=float)
@@ -34,6 +34,8 @@ if __name__ == '__main__':
             ds = '../../data/after_ggnn/devign/v6/'
         elif dataset == 'crash':
             ds = '../../data/example/crash-original/after_ggnn/'
+        elif dataset == 'my_chrome_debian':
+            ds = '../../data/example/my_chrome_debian-original/after_ggnn/'
         else:
             raise ValueError('Imvalid Dataset')
     else:
